@@ -1,0 +1,24 @@
+{
+  "name": "frontend-nanodegree-mobile-portfolio-master",
+  "version": "1.0.0",
+  "description": "web optimization",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hconley6695/mobile-portfolio.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Hconley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hconley6695/mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/hconley6695/mobile-portfolio#readme"
+}
