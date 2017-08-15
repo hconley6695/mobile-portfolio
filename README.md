@@ -80,6 +80,7 @@ Point your browser to your local host:
 * Changed all instances of querySelector and querySelectorAll to the more efficient getElementById and getElementByClassName depending on whether a class or id is needed.
 * Changed out document.body request in "for" loop in changePizzaSizes function.  This prevents the browser from having to rerender the page every time the loop is run.  Added a style "for" loop within the changePizzaSizxes function to set the width, preventing the browser from having to render the page in between setting the styles.
 * Changed out document.body request in "for" loop in updatePositions function to prevent browser from rerendering the page every time it loops.
+* Added requestAnimationFrame inside the updatePositions function to request the browser to draw my animation at the next available opportunity.
 
 
 
