@@ -1,18 +1,19 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	cleanCSS = require('gulp-clean-css'),
-	rename = require('gulp-rename');
+	rename = require('gulp-rename'),
+	htmlmin = require('gulp-htmlmin'),
+	concat = require('gulp-concat'),
+	imagemin = require('gulp-imagemin');
 
 gulp.task('scripts', function() {
 
 	gulp.src('js/*.js')
 		.pipe(uglify())
-		.pipe(rename('app.min.js'))
 		.pipe(gulp.dest('dist/js/'));
 
 	gulp.src('views/js/*.js')
 		.pipe(uglify())
-		.pipe(rename('app.min.js'))
 		.pipe(gulp.dest('dist/views/js/'));
 })
 
@@ -27,6 +28,31 @@ gulp.task('styles', function() {
 
 })
 
+gulp.task('minify-html', function() {
+    gulp.src('*.html')
+      .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest('dist'));
+
+    gulp.src('views/*.html')
+      .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest('dist/views/'));
+});
+
+
+gulp.task('minify-images', function () {
+	gulp.src('img/*.png')
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/img'));
+
+	gulp.src('img/*.jpg')
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/img'));
+
+    gulp.src('views/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/views/images'));
+});
+
 gulp. task('watch', function() {
 
 	gulp.watch('js/*.js', ['scripts']);
@@ -34,4 +60,4 @@ gulp. task('watch', function() {
 })
 
 
-gulp.task('default', ['scripts', 'styles', 'watch']);
+gulp.task('default', ['scripts', 'styles', 'minify-images', 'minify-html', 'watch']);
