@@ -70,7 +70,7 @@ Serve the site:
   ```
 Point your browser to your local host:
   ```bash
-  $> localhost:8000
+  $> localhost:8000/dist/index.html
   ```
 
 
