@@ -83,6 +83,7 @@ Point your browser to your local host:
 #### Index.html
 * Defered loading of stylesheets
 * Loaded google fonts through a Web Font Loader asynchronously
+* Compressed pizzaria.jpg image
 
 #### Pizza.html
 * Add "transform" and "will-change" to the class "randomPizzaContainer"  and "mover" for browser to anticipate the changes
