@@ -10,16 +10,28 @@
       });
 
       // LOADS DEFERRED STYLESHEETS
-      var script1 = document.createElement('link');
-      script1.rel = 'stylesheet';
-      script1.href = 'css/style.css';
-      script1.type = 'text/css';
-      var defer = document.getElementsByTagName('link')[0];
-      godefer.parentNode.insertBefore(gscript1, defer);
+      // var script1 = document.createElement('link');
+      // script1.rel = 'stylesheet';
+      // script1.href = 'css/style.css';
+      // script1.type = 'text/css';
+      // var defer = document.getElementsByTagName('link')[0];
+      // godefer.parentNode.insertBefore(gscript1, defer);
 
-      var script2 = document.createElement('link');
-      script2.rel = 'stylesheet';
-      script2.href = 'css/style.css';
-      script2.type = 'text/css';
-      var defer2 = document.getElementsByTagName('link')[0];
-      godefer.parentNode.insertBefore(script2, defer2);</script></body></html>
+      // var script2 = document.createElement('link');
+      // script2.rel = 'stylesheet';
+      // script2.href = 'css/style.css';
+      // script2.type = 'text/css';
+      // var defer2 = document.getElementsByTagName('link')[0];
+      // godefer.parentNode.insertBefore(script2, defer2);
+
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);</script></body></html>
