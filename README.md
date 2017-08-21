@@ -74,15 +74,23 @@ Point your browser to your local host:
   ```
 
 
-#### Optimizations that I have done:
+### Optimizations that I have done:
+
+#### General
 * Minified html, css, and javascript files using Gulp
 * Compressed images using Gulp
-* Add "transform" and "will-change" to the class "randomPizzaContainer" for browser to anticipate the changes
+
+#### Index.html
+* Defered loading of stylesheets
+* Loaded google fonts through a Web Font Loader asynchronously
+
+#### Pizza.html
+* Add "transform" and "will-change" to the class "randomPizzaContainer"  and "mover" for browser to anticipate the changes
 * Changed all instances of querySelector and querySelectorAll to the more efficient getElementById and getElementByClassName depending on whether a class or id is needed.
 * Changed out document.body request in "for" loop in changePizzaSizes function.  This prevents the browser from having to rerender the page every time the loop is run.  Added a style "for" loop within the changePizzaSizxes function to set the width, preventing the browser from having to render the page in between setting the styles.
 * Changed out document.body request in "for" loop in updatePositions function to prevent browser from rerendering the page every time it loops.
 * Moved declarations of variables outside "for" loop on DOM content load. Defined set number of pizzas in browser window.
-* Added requestAnimationFrame inside the updatePositions function to request the browser to draw my animation at the next available opportunity.
+
 
 
 
