@@ -5,6 +5,9 @@ var gulp = require('gulp'),
 	htmlmin = require('gulp-htmlmin'),
 	concat = require('gulp-concat'),
 	imagemin = require('gulp-imagemin');
+	ghPages = require('gulp-gh-pages');
+
+
 
 gulp.task('scripts', function() {
 
@@ -57,7 +60,12 @@ gulp. task('watch', function() {
 
 	gulp.watch('js/*.js', ['scripts']);
 	gulp.watch('css/*.css', ['styles']);
-})
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
 
 
 gulp.task('default', ['scripts', 'styles', 'minify-images', 'minify-html', 'watch']);
