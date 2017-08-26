@@ -46,6 +46,8 @@ form {
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: transform;
+  width:33.33%; 
+  height: 325px;
 }
 
 .randomPizzaContainer:after {
@@ -54,6 +56,18 @@ form {
   clear:both;
 }
 
+.randomPizzaContainer div:first-child {
+  width: 35%;
+}
+
+.randomPizzaContainer div {
+  width: 65%;
+}
+
  .container {
   background-color: rgba(240, 60, 60, 0.8);
+}
+
+#locations h2, #pizzaGenerator h2 {
+  text-align: center;
 }

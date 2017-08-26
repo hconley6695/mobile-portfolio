@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" href="css/style.css">
+
   <link rel="stylesheet" href="css/bootstrap-grid.css">
 </head>
 
@@ -76,7 +76,7 @@
     </div>
     <div id="locations" class="row">
       <div class="col-md-12">
-        <h2 style="text-align: center">Locations!</h2>
+        <h2>Locations!</h2>
         <div class="row">
           <div class="col-md-6">
             <h3>Pizza Road</h3>
@@ -91,7 +91,7 @@
     </div>
     <div id="pizzaGenerator" class="row">
       <div class="col-md-12">
-        <h2 style="text-align: center">Our Pizzas!</h2>
+        <h2>Our Pizzas!</h2>
         <div class="row">
           <div class="col-md-12">
             <em>What size pizza would you like? Use the slider below to change pizza sizes.</em>
@@ -102,11 +102,11 @@
           </div>
         </div>
         <div id="randomPizzas" class="row">
-          <div id="pizza0" class="randomPizzaContainer" style="width:33.33%; height: 325px;">
-            <div style="width:35%"><!--  style="width: 100px; height: 100px; -->
+          <div id="pizza0" class="randomPizzaContainer">
+            <div> <!-- style="width:35%" -->
               <img src="images/pizza.png" class="img-responsive">
             </div>
-            <div style="width:65%">
+            <div> <!-- style="width:65%" -->
               <h4>The Udacity Special</h4>
               <ul>
                 <li>Turkey</li>
@@ -119,11 +119,11 @@
               </ul>
             </div>
           </div>
-          <div id="pizza1" class="randomPizzaContainer" style="width:33.33%; height: 325px;">
-            <div style="width:35%"><!--  style="width: 100px; height: 100px;" -->
+          <div id="pizza1" class="randomPizzaContainer">
+            <div><!-- style="width:35%" -->
               <img src="images/pizza.png" class="img-responsive">
             </div>
-            <div style="width:65%">
+            <div> <!-- style="width:65%" -->
               <h4>The Cameron Special</h4>
               <ul>
                 <li>Chicken</li>
@@ -137,7 +137,26 @@
     </div>
     <div id="footer" class="col-md-12">Thanks for visiting! &copy; 2014 Udacity</div>
   </div>
+
+<noscript id="styles">
+  <link rel="stylesheet" href="css/style.css" media="all">
+</noscript>
   <script type="text/javascript" src="js/main.js"></script>
+
+  <script type="text/javascript">
+    
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+  </script>
 </body>
 
 </html>

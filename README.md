@@ -82,7 +82,6 @@ Go to <a href="https://hconley6695.github.io/mobile-portfolio/">https://hconley6
 * Minified html, css, and javascript files using Gulp
 * Compressed images using Gulp
 
-
 #### Index.html
 * Defered loading of stylesheets
 * Loaded google fonts through a Web Font Loader asynchronously
