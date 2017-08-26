@@ -72,7 +72,9 @@ Point your browser to your local host:
   ```bash
   $> localhost:8000/dist/index.html
   ```
+OR
 
+Go to <a href="https://hconley6695.github.io/mobile-portfolio/">https://hconley6695.github.io/mobile-portfolio/</a>
 
 ### Optimizations that I have done:
 
@@ -80,10 +82,12 @@ Point your browser to your local host:
 * Minified html, css, and javascript files using Gulp
 * Compressed images using Gulp
 
+
 #### Index.html
 * Defered loading of stylesheets
 * Loaded google fonts through a Web Font Loader asynchronously
-* Compressed pizzaria.jpg image
+* Compressed images on page
+* Put a set width and height on images on page
 
 #### Pizza.html
 * Add "transform" and "will-change" to the class "randomPizzaContainer"  and "mover" for browser to anticipate the changes
