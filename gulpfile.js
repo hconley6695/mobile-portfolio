@@ -1,10 +1,8 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	cleanCSS = require('gulp-clean-css'),
-	rename = require('gulp-rename'),
 	htmlmin = require('gulp-htmlmin'),
-	concat = require('gulp-concat'),
-	imagemin = require('gulp-imagemin');
+	imagemin = require('gulp-imagemin'),
 	ghPages = require('gulp-gh-pages');
 
 
@@ -18,7 +16,7 @@ gulp.task('scripts', function() {
 	gulp.src('views/js/*.js')
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/views/js/'));
-})
+});
 
 gulp.task('styles', function() {
 	gulp.src('css/*.css')
@@ -29,7 +27,7 @@ gulp.task('styles', function() {
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('dist/views/css/'));
 
-})
+});
 
 gulp.task('minify-html', function() {
     gulp.src('*.html')
