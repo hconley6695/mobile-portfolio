@@ -451,19 +451,27 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
 
     // set variables for length and containers OUTSIDE of the for loop
-    var lengthPizza = document.getElementsByClassName('randomPizzaContainer').length;
-
     var randomPizzaContainer = document.getElementsByClassName('randomPizzaContainer');
 
-    var newwidth = [];
+     var lengthPizza = randomPizzaContainer.length;
+
+    // var newwidth = [];
     // created two separate "for" loops, one for determining size and other for style
     // saves repeated processing and prevents browser from too much rerendering and painting 
-    for (var i = 0; i < lengthPizza; i++) {
-      var dx = determineDx(randomPizzaContainer[i], size);
 
-      newwidth[i] = (randomPizzaContainer[i].offsetWidth + dx) + 'px';
+    var container = randomPizzaContainer[0];
+    console.log(container);
 
-    }
+    var dx = determineDx(container, size);
+    var newwidth = (container.offsetWidth + dx) + 'px';
+
+
+    // for (var i = 0; i < lengthPizza; i++) {
+    //   var dx = determineDx(randomPizzaContainer[i], size);
+
+    //   newwidth[i] = (randomPizzaContainer[i].offsetWidth + dx) + 'px';
+
+    // }
 
     for (i = 0; i < lengthPizza; i++) {
       randomPizzaContainer[i].style.width = newwidth;
@@ -483,8 +491,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
